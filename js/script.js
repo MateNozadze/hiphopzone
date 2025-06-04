@@ -20,12 +20,6 @@ dropdown.addEventListener('click', function (e) {
     e.stopPropagation();
 });
 
-// document.querySelectorAll('.artist-name').forEach(button => {
-//     button.addEventListener('click', () => {
-//         const bio = button.nextElementSibling;
-//         bio.classList.toggle('hidden');
-//     });
-// });
 
 const buttons = document.querySelectorAll('.artist-name');
 
