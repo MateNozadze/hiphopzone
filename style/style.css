@@ -18,7 +18,6 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  padding-top: 60px;
 
 }
 
@@ -27,16 +26,16 @@ body {
 
 header {
   background: rgb(20, 20, 60);
-  position: fixed;
+  position: sticky;
   top: 0;
   width: 100%;
-  z-index: 999;
-  /* მაღლა */
+  z-index: 100;
   color: white;
   padding: 10px;
-
+  height: auto;
   box-sizing: border-box;
 }
+
 
 .header-bar {
   display: flex;
@@ -48,12 +47,20 @@ header {
 .title a {
   font-style: oblique;
   color: white;
+  font-size: 40px;
+}
+
+.title {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
 }
 
 .nav-left {
   display: flex;
   justify-content: center;
-  gap: 90px;
+  gap: 250px;
+
 }
 
 
@@ -92,23 +99,24 @@ header {
   cursor: pointer;
 }
 
-.dropbtn:hover {
-  background-image: url(../img/hprofile.png);
 
-}
 
 .dropdown {
   position: relative;
+  display: inline-block;
 }
 
 .dropdown-content {
   display: none;
   position: absolute;
   right: 0;
-  background-color: #222;
+  background: linear-gradient(to left, #c55c00, #38006de4);
   min-width: 60px;
   z-index: 1;
   border-radius: 10%;
+  white-space: nowrap;
+
+  overflow: visible;
 }
 
 .dropdown-content a {
@@ -116,6 +124,11 @@ header {
   padding: 10px;
   color: white;
   text-decoration: none;
+}
+
+.dropbtn:hover {
+  background-image: url(../img/hprofile.png);
+
 }
 
 /* header-ს დასასრული */
@@ -397,95 +410,7 @@ footer {
 
 
 
-
-@media (max-width: 1000px) {
-  .index-body {
-    padding-top: 100px;
-  }
-
-  .header-bar {
-    height: 50px;
-  }
-
-  .rapper {
-    height: 40px;
-    width: 40px;
-  }
-
-  .index-creator {
-    font-size: 40px;
-  }
-
-  .title {
-    font-size: 20px;
-  }
-
-  .nav-left {
-    gap: 60px;
-  }
-
-  .nav-left li a {
-    height: 30px;
-    width: 100px;
-    font-size: 20px;
-  }
-
-}
-
-
-
-@media (max-width: 720px) {
-
-  .hiphop-animation {
-    display: none;
-  }
-
-  .artist-list {
-    width: 100%;
-  }
-
-  .header-bar {
-    height: 60px;
-  }
-
-  .rapper {
-    height: 40px;
-    width: 40px;
-  }
-
-  .index-creator {
-    font-size: 30px;
-  }
-
-  .nav-left {
-    gap: 20px;
-  }
-
-  .nav-left li a {
-    height: 25px;
-    width: 60px;
-    font-size: 12px;
-  }
-
-  .dropbtn {
-    height: 40px;
-    width: 40px;
-  }
-
-
-}
-
-
-
-
-
-
-
-
-
-
-
-
+/* login/register- start */
 .login-main {
   width: 100%;
   height: 100%;
@@ -498,10 +423,30 @@ footer {
   background-position: center;
 }
 
-form {
+
+
+.log-form {
   width: 500px;
 }
 
+form fieldset {
+
+  padding: 20px;
+  border: none;
+}
+
+form legend {
+  font-weight: bold;
+  padding: 0 10px;
+  color: #222;
+  text-align: center;
+  font-size: larger;
+}
+
+label {
+  font-size: large;
+  color: rgb(0, 0, 0);
+}
 
 input {
   width: 100%;
@@ -526,6 +471,7 @@ input {
   color: #000000;
 }
 
+
 .have-no-acc a {
   color: rgb(255, 172, 47);
 }
@@ -536,4 +482,499 @@ input {
   border-style: none;
   cursor: pointer;
   font-size: 20px;
+}
+
+.error {
+  color: red;
+  font-size: 18px;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.success {
+  color: green;
+  font-size: 18px;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+/* login/register-end */
+
+
+/* profile-start */
+
+
+.profile-main {
+  width: 100%;
+  height: 100%;
+  background-image: url(../img/profile-background.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  padding-top: 100px;
+  gap: 30px;
+  flex-direction: column;
+  align-items: center;
+
+}
+
+.user-name {
+  text-align: center;
+  font-weight: bold;
+  color: hsl(210, 66%, 23%);
+}
+
+.prof-pic {
+  height: 100px;
+  width: 100px;
+  background-image: url(../img/hprofile.png);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+
+}
+
+.post-section {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+  background-color: hsl(210, 50%, 95%);
+  padding: 20px;
+  border-radius: 10px;
+}
+
+#post-text {
+  height: 70px;
+  width: 500px;
+  outline: none;
+  background-color: hsl(210, 60%, 98%);
+  border: 1px solid #ccc;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 6px;
+  resize: none;
+}
+
+#post-image {
+  width: 400px;
+  padding: 5px;
+  font-size: 14px;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  cursor: pointer;
+
+}
+
+#post-btn {
+  height: 35px;
+  width: 100px;
+  background-color: hsl(210, 70%, 60%);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.del_acc {
+  background-color: red;
+  color: white;
+  padding: 5px;
+  border-radius: 10px;
+  outline: none;
+  cursor: pointer;
+}
+
+
+/* profile-end */
+
+
+
+/* community-start */
+
+
+
+.community-main {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: flex-start;
+
+  align-items: center;
+  background-image: url(../img/profile-background.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  flex-direction: column;
+
+  padding-top: 30px;
+  padding-bottom: 50px;
+}
+
+.com-body {
+  background: linear-gradient(to right, #ffe1005d, #4b009183);
+  min-height: 100vh;
+  margin: 0;
+}
+
+.community-main h1 {
+  text-align: center;
+  font-size: 2rem;
+  color: hsl(270, 70%, 40%);
+}
+
+.com-h1 h1 {
+  text-align: center;
+  margin-bottom: 40px;
+  font-weight: 700;
+  color: hsl(290, 59%, 21%);
+  font-style: oblique;
+}
+
+.post {
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin-bottom: 30px;
+  width: 100%;
+  height: ;
+  transition: box-shadow 0.3s ease;
+}
+
+.post:hover {
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+}
+
+.post-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 15px;
+}
+
+.post-profile {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid hsl(210, 70%, 50%);
+}
+
+.post-user-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.post-username {
+  font-weight: 600;
+  font-size: 16px;
+  color: hsl(210, 80%, 35%);
+}
+
+.post-date {
+  font-size: 12px;
+  color: hsl(210, 30%, 60%);
+}
+
+.post-content {
+  margin-top: 10px;
+}
+
+.post-text {
+  font-size: 15px;
+  line-height: 1.5;
+  color: hsl(210, 10%, 20%);
+  margin-bottom: 15px;
+  white-space: pre-wrap;
+}
+
+.post-image {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  object-fit: cover;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+#posts-container {
+  width: 100%;
+  max-width: 700px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* community-end */
+
+@media (max-width: 1000px) {
+
+
+
+  .user-name {
+    font-size: medium;
+  }
+
+  .prof-pic {
+    height: 80px;
+    width: 80px;
+
+  }
+
+
+
+  #post-text {
+    height: 40px;
+    width: 400px;
+    font-size: 13px;
+  }
+
+  #post-image {
+    width: 400px;
+    padding: 5px;
+    font-size: 14px;
+
+  }
+
+  #post-btn {
+    height: 30px;
+    width: 80px;
+
+  }
+
+  .del_acc{
+    font-size: 11px;
+  }
+
+
+  .log-form {
+    width: 400px;
+  }
+
+  .header-bar {
+    height: 40px;
+  }
+
+  .log {
+    font-size: 17px;
+  }
+
+  .register {
+    font-size: 17px;
+  }
+
+  .have-no-acc {
+    font-size: 17px;
+  }
+
+  .rapper {
+    height: 40px;
+    width: 40px;
+  }
+
+  .index-creator {
+    font-size: 30px;
+  }
+
+  .title a {
+    font-size: 25px;
+  }
+
+  .artist img {
+    height: 70px;
+    width: 70px;
+  }
+
+  .artist button {
+    font-size: 16px;
+  }
+
+  .artist p {
+    font-size: 16px;
+  }
+
+  .decade h2 {
+    font-size: 22px;
+  }
+
+
+  .nav-left {
+    gap: 150px;
+  }
+
+  .nav-left li a {
+    height: 30px;
+    width: 100px;
+    font-size: 20px;
+  }
+
+}
+
+
+
+@media (max-width: 720px) {
+
+  .user-name {
+    font-size: small;
+  }
+
+  .prof-pic {
+    height: 60px;
+    width: 60px;
+
+  }
+
+
+
+  #post-text {
+    height: 35px;
+    width: 300px;
+    font-size: 11px;
+  }
+
+  #post-image {
+    width: 300px;
+    padding: 5px;
+    font-size: 11px;
+
+  }
+
+  #post-btn {
+    height: 25px;
+    width: 60px;
+
+  }
+  .del_acc{
+    font-size: 9px;
+  }
+  .hiphop-animation {
+    display: none;
+  }
+
+  .artist-list {
+    width: 100%;
+  }
+
+  .log-form {
+    width: 300px;
+  }
+
+  .log {
+    font-size: 14px;
+  }
+
+  .register {
+    font-size: 14px;
+  }
+
+  .have-no-acc {
+    font-size: 14px;
+  }
+
+  .title a {
+    font-size: 15px;
+  }
+
+
+  .artist img {
+    height: 50px;
+    width: 50px;
+  }
+
+  .artist button {
+    font-size: 14px;
+  }
+
+  .artist p {
+    font-size: 14px;
+  }
+
+
+
+  .decade h2 {
+    font-size: 18px;
+  }
+
+
+
+  .header-bar {
+    height: 30px;
+  }
+
+  .rapper {
+    height: 30px;
+    width: 30px;
+  }
+
+  .index-creator {
+    font-size: 20px;
+  }
+
+  .nav-left {
+    gap: 80px;
+  }
+
+  .nav-left li a {
+    height: 25px;
+    width: 60px;
+    font-size: 12px;
+  }
+
+  .dropbtn {
+    height: 40px;
+    width: 40px;
+  }
+
+
+}
+
+@media (max-width: 460px) {
+  .user-name {
+    font-size: medium;
+  }
+
+  .prof-pic {
+    height: 50px;
+    width: 50px;
+
+  }
+
+
+
+  #post-text {
+    height: 30px;
+    width: 250px;
+    font-size: 10px;
+  }
+
+  #post-image {
+    width: 250px;
+    padding: 5px;
+    font-size: 10px;
+
+  }
+
+  #post-btn {
+    height: 20px;
+    width: 60px;
+
+  }
+
+  .nav-left {
+    gap: 40px;
+  }
+
+  .index-creator {
+    font-size: 15px;
+  }
+
+  .decade h2 {
+    font-size: 14px;
+  }
+
+  .artist button {
+    font-size: 13px;
+  }
 }
